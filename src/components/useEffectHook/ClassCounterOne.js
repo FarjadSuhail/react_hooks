@@ -5,20 +5,37 @@ export class ClassCounterOne extends Component {
     super(props);
     this.state = {
       count: 0,
+      name: "",
     };
   }
   componentDidMount() {
-    console.log(0);
     document.title = `Clicked ${this.state.count} times`;
   }
 
-  componentDidUpdate() {
-    console.log(1);
-    document.title = `Clicked ${this.state.count} times`;
+  //   componentDidUpdate() {
+  //     console.log("title update");
+  //     // running unnecesaarily
+  //     document.title = `Clicked ${this.state.count} times`;
+  //   }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log("prevState", prevState.count);
+    console.log("state", this.state.count);
+
+    if (prevState.count != this.state.count) {
+      document.title = `Clicked ${this.state.count} times`;
+      console.log("title update");
+    }
   }
+
   render() {
     return (
       <div>
+        <input
+          type="text"
+          value={this.state.name}
+          onChange={(e) => this.setState({ name: e.target.value })}
+        />
         <button onClick={() => this.setState({ count: this.state.count + 1 })}>
           Click {this.state.count} times
         </button>
