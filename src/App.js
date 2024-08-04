@@ -1,9 +1,14 @@
 import React from "react";
-import ClassCounter from "./components/ClassCounter";
-import HookCounter from "./components/HookCounter";
-import HookCounter2 from "./components/HookCounter2";
-import HookCounter3 from "./components/HookCounter3";
-import HookCounter4 from "./components/HookCounter4";
+import ClassCounter from "./components/useStateHook/ClassCounter";
+import HookCounter from "./components/useStateHook/HookCounter";
+import HookCounter2 from "./components/useStateHook/HookCounter2";
+import HookCounter3 from "./components/useStateHook/HookCounter3";
+import HookCounter4 from "./components/useStateHook/HookCounter4";
+import ClassCounterOne from "./components/useEffectHook/ClassCounterOne";
+import HookCounterOne from "./components/useEffectHook/HookCounterOne";
+import HookMouse from "./components/useEffectHook/HookMouse";
+import IntervalHookCounter from "./components/useEffectHook/IntervalHookCounter";
+import DataFetching from "./components/useEffectHook/DataFetching";
 
 function App() {
   return (
@@ -12,7 +17,12 @@ function App() {
       {/* <HookCounter /> */}
       {/* <HookCounter2 /> */}
       {/* <HookCounter3 /> */}
-      <HookCounter4 />
+      {/* <HookCounter4 /> */}
+      {/* <ClassCounterOne /> */}
+      {/* <HookCounterOne /> */}
+      {/* <HookMouse /> */}
+      {/* <IntervalHookCounter /> */}
+      <DataFetching />
     </div>
   );
 }
